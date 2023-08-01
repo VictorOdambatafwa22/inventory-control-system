@@ -19,8 +19,8 @@ const Login = (() => {
                             <label for="password" className="form-label">Password</label>
                             <input type="number" className="form-control" id="password" aria-describedby="password"></input>
                         </div>
+                        <button type="submit" className="btn btn-primary"> Login </button>
                         </form>
-                        <button type="button" className="btn btn-primary"> Login </button>
                 </div>
             </div>
         </div>
