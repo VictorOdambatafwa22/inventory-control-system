@@ -139,7 +139,9 @@ const Products = () => {
   );
 
   return (
-    <div>
+    <div className='container'>
+      <div className='row'>
+        <div className='col-md-6'>
       <h2>Product Table</h2>
       <input
         type="text"
@@ -150,9 +152,7 @@ const Products = () => {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div className='card'>
-          <div className='card-body'>
-            <div className='table-responsive'>
+       
         <table className="table table-striped table-sm">
           <thead>
             <tr>
@@ -184,13 +184,12 @@ const Products = () => {
             ))}
           </tbody>
         </table>
-        </div>
-        </div>
-        </div>
+        
+       
       )}
+      </div>
 
-      <div className='card'>
-        <div className='card-body'>
+      <div className='col-md-6'>
       <h2>{editingIndex !== null ? 'Edit Product' : 'Add New Product'}</h2>
       <form onSubmit={handleFormSubmit}>
         <div className="mb-3">
@@ -201,11 +200,11 @@ const Products = () => {
               name="productCode"
               value={formData.productCode}
               onChange={handleInputChange}
-              className="form-control"
+              className="form-control form-control-sm"
             />
           </label>
         </div>
-        <div className="mb-2">
+        <div className="mb-3">
           <label className="form-label">
             Product name:
             <input
@@ -213,7 +212,7 @@ const Products = () => {
               name="pName"
               value={formData.pName}
               onChange={handleInputChange}
-              className="form-control"
+              className="form-control form-control-sm"
             />
           </label>
         </div>
@@ -225,7 +224,7 @@ const Products = () => {
               name="price"
               value={formData.price}
               onChange={handleInputChange}
-              className="form-control"
+              className="form-control form-control-sm"
             />
           </label>
         </div>
@@ -237,7 +236,7 @@ const Products = () => {
               name="category"
               value={formData.category}
               onChange={handleInputChange}
-              className="form-control"
+              className="form-control form-control-sm"
             />
           </label>
         </div>
@@ -249,7 +248,7 @@ const Products = () => {
           name="quantity"
           value={formData.quantity}
           onChange={handleInputChange}
-          className="form-control"
+          className="form-control form-control-sm"
         />
       </label>
     </div>
@@ -261,7 +260,7 @@ const Products = () => {
           name="Instock"
           value={formData.Instock}
           onChange={handleInputChange}
-          className="form-control"
+          className="form-control form-control-sm"
         />
       </label>
     </div>
@@ -273,6 +272,7 @@ const Products = () => {
           name="expiryDate"
           value={formData.expiryDate}
           onChange={handleInputChange}
+          className='form-control form-control-sm'
         />
       </label>
     </div>
@@ -280,9 +280,10 @@ const Products = () => {
       {editingIndex !== null ? 'Save' : 'Submit'}
     </button>
   </form>
+  </div>
+  </div>
 </div>
-</div>
-</div>
+
 );
 };
 
