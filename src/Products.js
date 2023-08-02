@@ -1,61 +1,292 @@
-import React from "react";
 
-function Products(){
- 
-    return (
-             <div className="position-absolute top-50 start-50 translate-middle">
-                <h2>Add new product </h2>
-                <form>
-               <div className="mb-3">
-               <label className="form-label">
-                Product Code:
-                <input type="number" name="Product Code" className="form-control"/>
-                </label>
-               </div>
-               <div className="mb-3">
-               <label className="form-label">
-                Product name:
-                <input type="text" name="Product name" className="form-control"/>
-                </label>
-               </div>
-                <div className="mb-3">
-                <label className="form-label">
-                Product Price:
-                <input type="text" name="Product Price" className="form-control"/>
-                </label>
-                </div>
-               <div className="mb-3"> 
-               <label className="form-label">
-                 Product Category:
-                <input type="text" name="Product category" className="form-control"/>
-                </label>
-               </div>
-               <div className="mb-3">
-               <label className="form-label">
-                 Product Quantity:
-                <input type="number" name="Product Quantity" className="form-control"/>
-                </label>
-               </div>
-                <div className="mb-3">
-                <label className="form-label">
-                Instock:
-                <input type="number" name="instock" className="form-control"/>
-                </label>
-                </div>
-               <div className="mb-3">
-               <label>
-                Expiry Date:
-                <input type="date"/>
-                </label>
-               </div>
+import React, { useState, useEffect } from 'react';
 
-                <button type="submit">Submit</button>
+const Products = () => {
+  const [products, setProducts] = useState([]);
+  const [formData, setFormData] = useState({
+    productCode: '',
+    pName: '',
+    price: '',
+    category: '',
+    quantity: '',
+    Instock: '',
+    expiryDate: '',
+  });
+  const [searchTerm, setSearchTerm] = useState('');
+  const [editingIndex, setEditingIndex] = useState(null);
+  const [loading, setLoading] = useState(true); 
 
+  useEffect(() => {
+    fetchProducts();
+  }, []); 
 
-                </form>
-             </div>
+  const fetchProducts = () => {
+    setLoading(true);
+    fetch('https://inventory-server-mj8r.onrender.com/products')
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+        setLoading(false);
+      });
+  };
 
-    );
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    if (editingIndex !== null) {
+      
+      const editedProduct = {
+        ...formData,
+        id: products[editingIndex].id,
+      };
+
+      fetch(`https://inventory-server-mj8r.onrender.com/products/${editedProduct.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(editedProduct),
+      })
+        .then((response) => response.json())
+        .then((updatedProduct) => {
+          const updatedProducts = [...products];
+          updatedProducts[editingIndex] = updatedProduct;
+          setProducts(updatedProducts);
+          setFormData({
+            productCode: '',
+            pName: '',
+            price: '',
+            category: '',
+            quantity: '',
+            Instock: '',
+            expiryDate: '',
+          });
+          setEditingIndex(null);
+        })
+        .catch((error) => {
+          console.error('Error updating product:', error);
+        });
+    } else {
+      
+      fetch('https://inventory-server-mj8r.onrender.com/products', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => response.json())
+        .then((newProduct) => {
+          setProducts([...products, newProduct]);
+          setFormData({
+            productCode: '',
+            pName: '',
+            price: '',
+            category: '',
+            quantity: '',
+            Instock: '',
+            expiryDate: '',
+          });
+        })
+        .catch((error) => {
+          console.error('Error adding product:', error);
+        });
     }
+  };
+
+  const handleEdit = (index) => {
+
+    setFormData(products[index]);
+    setEditingIndex(index);
+  };
+
+  const handleDelete = (index) => {
+    const productId = products[index].id;
+    fetch(`https://inventory-server-mj8r.onrender.com/products/${productId}`, {
+      method: 'DELETE',
+    })
+      .then(() => {
+        const updatedProducts = [...products];
+        updatedProducts.splice(index, 1);
+        setProducts(updatedProducts);
+        setEditingIndex(null);
+      })
+      .catch((error) => {
+        console.error('Error deleting product:', error);
+      });
+  };
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredProducts = products.filter(
+    (product) =>
+      product.productCode.toString().includes(searchTerm) ||
+      product.pName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return (
+    <div>
+      <h2>Product Table</h2>
+      <input
+        type="text"
+        placeholder="Search by product code or name"
+        value={searchTerm}
+        onChange={handleSearch}
+      />
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div className='card'>
+          <div className='card-body'>
+            <div className='table-responsive'>
+        <table className="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th>Product Code</th>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Category</th>
+              <th>Quantity</th>
+              <th>In Stock</th>
+              <th>Expiry Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredProducts.map((product, index) => (
+              <tr key={index}>
+                <td>{product.productCode}</td>
+                <td>{product.pName}</td>
+                <td>{product.price}</td>
+                <td>{product.category}</td>
+                <td>{product.quantity}</td>
+                <td>{product.Instock}</td>
+                <td>{product.expiryDate}</td>
+                <td>
+                  <button className="btn btn-outline-primary" onClick={() => handleEdit(index)}>Edit</button>
+                  <button className='btn btn-outline-danger' onClick={() => handleDelete(index)}>Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        </div>
+        </div>
+        </div>
+      )}
+
+      <div className='card'>
+        <div className='card-body'>
+      <h2>{editingIndex !== null ? 'Edit Product' : 'Add New Product'}</h2>
+      <form onSubmit={handleFormSubmit}>
+        <div className="mb-3">
+          <label className="form-label">
+            Product Code:
+            <input
+              type="number"
+              name="productCode"
+              value={formData.productCode}
+              onChange={handleInputChange}
+              className="form-control"
+            />
+          </label>
+        </div>
+        <div className="mb-2">
+          <label className="form-label">
+            Product name:
+            <input
+              type="text"
+              name="pName"
+              value={formData.pName}
+              onChange={handleInputChange}
+              className="form-control"
+            />
+          </label>
+        </div>
+        <div className="mb-3">
+          <label className="form-label">
+            Product Price:
+            <input
+              type="text"
+              name="price"
+              value={formData.price}
+              onChange={handleInputChange}
+              className="form-control"
+            />
+          </label>
+        </div>
+        <div className="mb-3">
+          <label className="form-label">
+            Product Category:
+            <input
+              type="text"
+              name="category"
+              value={formData.category}
+              onChange={handleInputChange}
+              className="form-control"
+            />
+          </label>
+        </div>
+        <div className="mb-3">
+        <label className="form-label">
+        Product Quantity:
+        <input
+          type="number"
+          name="quantity"
+          value={formData.quantity}
+          onChange={handleInputChange}
+          className="form-control"
+        />
+      </label>
+    </div>
+    <div className="mb-3">
+      <label className="form-label">
+        Instock:
+        <input
+          type="number"
+          name="Instock"
+          value={formData.Instock}
+          onChange={handleInputChange}
+          className="form-control"
+        />
+      </label>
+    </div>
+    <div className="mb-3">
+      <label>
+        Expiry Date:
+        <input
+          type="date"
+          name="expiryDate"
+          value={formData.expiryDate}
+          onChange={handleInputChange}
+        />
+      </label>
+    </div>
+    <button className="btn btn-outline-primary" type="submit">
+      {editingIndex !== null ? 'Save' : 'Submit'}
+    </button>
+  </form>
+</div>
+</div>
+</div>
+);
+};
 
 export default Products;
+
+         
+
