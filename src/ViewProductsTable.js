@@ -13,7 +13,7 @@ function ViewProductsTable({ products, onEdit,onDelete }) {
             <td>{product.quantity}</td>
             <td>{product.Instock}</td>
 
-            <td><button onClick={() => onEdit(product)}>BUY</button>  <button onClick={() => onDelete(product.id)}>DELETE</button></td>
+            <td><button onClick={() => onEdit(product)}>BUY</button> <button onClick={() => onDelete(product.id)}>DELETE</button></td>
 
         </tr>
    })
@@ -21,7 +21,9 @@ function ViewProductsTable({ products, onEdit,onDelete }) {
 
         <div>
 
-            <table id="products">
+
+
+            <table id="products" >
                 <thead>
                     <tr>
                         <th>productCode</th>
@@ -46,6 +48,7 @@ function ViewProductsTable({ products, onEdit,onDelete }) {
                 </tbody>
 
             </table>
+           
 
         </div>
 
