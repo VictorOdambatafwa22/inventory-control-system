@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import Router from './Router';
+import React, {useEffect, useState } from 'react';
 
 import './App.css';
 //import Navbar from './NavBar';
 import Sales from './Sales'
 import ViewProductsTable from './ViewProductsTable';
-import Products from './Products';
+
 
 //import Sales from './Sales';
 
