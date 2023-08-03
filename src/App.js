@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Router from './Router';
@@ -56,8 +55,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Router handleLogin={handleLogin} handleLogout={handleLogout} loggedInUser={loggedInUser} loginError={loginError}/>
-        </BrowserRouter>
-        <Products/>   
+      </BrowserRouter>
+      <Products/>
     </div>
   );
 }
