@@ -143,12 +143,15 @@ const Products = () => {
       <div className='row'>
         <div className='col-md-6'>
       <h2>Product Table</h2>
+      <div className='input-group mb-3'>
       <input
         type="text"
+        className='form-control'
         placeholder="Search by product code or name"
         value={searchTerm}
         onChange={handleSearch}
       />
+      </div>
       {loading ? (
         <p>Loading...</p>
       ) : (
@@ -177,8 +180,8 @@ const Products = () => {
                 <td>{product.Instock}</td>
                 <td>{product.expiryDate}</td>
                 <td>
-                  <button className="btn btn-outline-primary" onClick={() => handleEdit(index)}>Edit</button>
-                  <button className='btn btn-outline-danger' onClick={() => handleDelete(index)}>Delete</button>
+                  <button className="btn btn-outline-primary btn-sm" onClick={() => handleEdit(index)}>Edit</button>
+                  <button className='btn btn-outline-danger btn-sm' onClick={() => handleDelete(index)}>Delete</button>
                 </td>
               </tr>
             ))}
@@ -290,4 +293,3 @@ const Products = () => {
 export default Products;
 
          
-
