@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Router from './Router';
 import './App.css';
+import Footer from './Footer';
 
 function App() {
   // State to manage login error, logged-in user, and user role
@@ -55,6 +56,7 @@ function App() {
       <BrowserRouter>
         <Router handleLogin={handleLogin} handleLogout={handleLogout} loggedInUser={loggedInUser} loginError={loginError}/>
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }
