@@ -11,10 +11,10 @@ function Footer() {
                 <h5>Follow us</h5>
             </div>
             <div className="d-flex justify-content-center gap-2">
-            <a href="#"><img src="/facebook.png" alt="Facebook" className="img-fluid" style={{ width: "30px", height: "30px" }}/></a>
-            <a href="#"><img src="/instagram.png" alt="Instagram" className="img-fluid" style={{ width: "30px", height: "30px" }}/></a>
-            <a href="#"><img src="/linkedin.png" alt="LinkedIn" className="img-fluid" style={{ width: "30px", height: "30px" }}/></a>
-            <a href="#"><img src="/twitter.png" alt="Twitter" className="img-fluid" style={{ width: "30px", height: "30px" }}/></a>
+            <a href="https://www.semrush.com/"><img src="/facebook.png" alt="Facebook" className="img-fluid" style={{ width: "30px", height: "30px" }}/></a>
+            <a href="https://www.semrush.com/"><img src="/instagram.png" alt="Instagram" className="img-fluid" style={{ width: "30px", height: "30px" }}/></a>
+            <a href="https://www.semrush.com/"><img src="/linkedin.png" alt="LinkedIn" className="img-fluid" style={{ width: "30px", height: "30px" }}/></a>
+            <a href="https://www.semrush.com/"><img src="/twitter.png" alt="Twitter" className="img-fluid" style={{ width: "30px", height: "30px" }}/></a>
             </div>
         <p>© 2023 KISCEN ENT.</p>
         <p>All rights reserved.</p> 

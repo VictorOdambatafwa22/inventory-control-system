@@ -490,15 +490,15 @@ function handleEditClick(prod) {
   //   setUserRole(null);
   // };
 
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Router handleLogin={handleLogin} handleLogout={handleLogout} loggedInUser={loggedInUser} loginError={loginError}/>
-      </BrowserRouter>
+  // return (
+  //   <div className="App">
+  //     <BrowserRouter>
+  //       <Router handleLogin={handleLogin} handleLogout={handleLogout} loggedInUser={loggedInUser} loginError={loginError}/>
+  //     </BrowserRouter>
 
-    </div>
+  //   </div>
 
-  );
+  // );
 
 
 
