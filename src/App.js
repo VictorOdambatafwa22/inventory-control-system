@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Router from './Router';
 
 import './App.css';
-//import Footer from './Footer';
+import Footer from './Footer';
 
 //import Staff from "./Staff";
 //import Sales from "./Sales";
@@ -438,7 +438,7 @@ function handleEditClick(prod) {
     
     
     </BrowserRouter>
-    {/* <Footer /> */}
+    <Footer />
 
       </>
 

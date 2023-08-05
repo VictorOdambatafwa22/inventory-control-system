@@ -1,11 +1,11 @@
 import React from "react"
 
 
-function ViewProductsTable({ products, onEdit,onDelete }) {
+function ViewProductsTable({ products, onEdit, onDelete }) {
 
-   const list = products.map((product) => {
+    const list = products.map((product) => {
 
-       return <tr key={product.id} >
+        return <tr key={product.id} >
             <td>{product.productCode}</td>
             <td>{product.pName}</td>
             <td>{product.price}</td>
@@ -13,48 +13,62 @@ function ViewProductsTable({ products, onEdit,onDelete }) {
             <td>{product.quantity}</td>
             <td>{product.Instock}</td>
 
-            <td><button onClick={() => onEdit(product)}>BUY</button> <button onClick={() => onDelete(product.id)}>DELETE</button></td>
+            <td><button onClick={() => onEdit(product)}>BUY</button></td><td><button onClick={() => onDelete(product.id)}>DELETE</button></td>
+
+
+
+
 
         </tr>
-   })
+    })
     return (
 
         <div>
 
 
 
-           {/* <table id="products" >  */}
-           <table  className="table table-hover table-bordered mt-5 mx-auto" > 
-           
-          
-          
-                <thead>
-                    <tr>
-                        <th>productCode</th>
-                        <th>pName</th>
-                        <th>price</th>
-                        <th>category</th>
-                        <th>quantity</th>
-                        <th>Instock</th>
-                       
+            <div className="col-md-12 d-flex justify-content-center align-items-center">
+                <div className="table-responsive">
+
+                    <table
+                        className="table table-hover table-bordered mt-5 mx-auto"
+                        style={{ maxWidth: "100%" }}
+                    >
+                    
+
+
+                            <thead>
+                                <tr>
+                                    <th>productCode</th>
+                                    <th>pName</th>
+                                    <th>price</th>
+                                    <th>category</th>
+                                    <th>quantity</th>
+                                    <th>Instock</th>
+                                    <th>Buy</th>
+                                    <th>Delete</th>
 
 
 
-                        <th></th>
-                    </tr>
 
-                </thead>
-                <tbody>
+                                    
+                                </tr>
 
-                {list}
+                            </thead>
+                            <tbody>
+
+                                {list}
 
 
-                </tbody>
+                            </tbody>
 
-            </table>
-           
+                    </table>
+
+                </div>
+            </div>
 
         </div>
+
 
     );
 }
