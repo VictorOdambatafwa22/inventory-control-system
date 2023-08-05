@@ -39,11 +39,11 @@ function ViewProductsTable({ products, onEdit, onDelete }) {
 
                             <thead>
                                 <tr>
-                                    <th>productCode</th>
-                                    <th>pName</th>
-                                    <th>price</th>
-                                    <th>category</th>
-                                    <th>quantity</th>
+                                    <th>ProductCode</th>
+                                    <th>ProductName</th>
+                                    <th>Price</th>
+                                    <th>Category</th>
+                                    <th>Quantity</th>
                                     <th>Instock</th>
                                     <th>Buy</th>
                                     <th>Delete</th>
