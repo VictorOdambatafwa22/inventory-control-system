@@ -2,22 +2,22 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const NavBar = ({ user, handleLogout }) => {
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   // Function to handle logout button click
   const handleLogoutClick = () => {
     // Clear user info and perform logout logic
     handleLogout();
     //Navigate back to login page
-    navigate('/');
+    //navigate('/');
   };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <Link className="navbar-brand ml-0" to="/navbar">
+        {/* <Link className="navbar-brand ml-0" to="/navbar">
           KISCEN ENT.
-        </Link>
+        </Link> */}
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav mx-auto justify-content-center">
             {user ? (

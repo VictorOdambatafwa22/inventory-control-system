@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+# INVENTORY CONTROL SYSTEM APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Created on 2-08-2023
 
-## Available Scripts
+## Description
+-The Inventory Control System App is a powerful and user friendly web application built with React, designed to provide users with an easy-to-use interface for managing inventory.Built using React.js and React Router, this application offers a seamless and intuitive experience for small businesses and organizations to efficiently handle their operational data. It allows multiple users to collaborate on inventory updates simultaneously. The application utilizes a React front-end and communicates with a backend API to store and retrieve data.
 
-In the project directory, you can run:
+-The app's features and modern interface empowers users to effortlessly organize, track, and record crucial aspects of their business operations. This includes managing staff details, monitoring product availability, or recording sales transactions.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The Inventory Management App provides the following features:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **User Authentication:**
+  - Staff members can log in using their unique staff ID and password.
+  - Authentication is performed against the server's staff data.
+  - Logged-in users can access the app's functionalities.
 
-### `npm test`
+- **Staff Management:**
+  - View a list of all staff members along with their details.
+  - Add new staff members with their information.
+  - Edit existing staff details, such as name, gender, title, and role.
+  - Delete staff members from the system.
+  - Search for staff members based on their names.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Product Management:**
+  - View a list of all products available in the inventory.
+  - Search for products using keywords.
+  - Delete products that are no longer in stock.
+  - Edit product details, including name, description, price, and stock availability.
+  - Record sales by reducing the available stock.
 
-### `npm run build`
+- **Sales Recording:**
+  - Record sales transactions, automatically updating product stock.
+  - Each sale record includes the date, staff ID, product name, and quantity sold.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **User Interface:**
+  - A user-friendly and responsive UI design for seamless navigation and interaction.
+  - Intuitive forms and controls for adding, editing, and searching staff and products.
+  - Clear display of sales records and product inventory.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
+- Web-browser of your choice
+- Github
+- Node.js (https://nodejs.org/)
+- npm (Node Package Manager, included with Node.js)
+- JSON server
+- Render(https://www.render.com)
 
-### `npm run eject`
+### Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the repository to your local machine:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+git clone https://github.com/VictorOdambatafwa22/inventory-control-system
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Navigate to the project directory:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+cd inventory-management-app
 
-## Learn More
+3. Install the required dependencies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Start the development server:
 
-### Code Splitting
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Open your web browser and go to http://localhost:3000 to access the application.
 
-### Analyzing the Bundle Size
+### Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    Log in using your staff ID and password.
+    Navigate through different sections of the application using the navigation menu.
+    Manage staff, products, and sales using the provided features.
 
-### Making a Progressive Web App
+## Contributors
+ Victor Odambatafwa
+ Peggy Kimotho
+ Collins Kiarie
+ Victor Oroo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+ ### Technologies Used
 
-### Advanced Configuration
+    The following have been used on this project:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    React.js
+    React Router
+    RESTful API (server-side)
+    CSS (styles and layout)
+    Bootstrap
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+#### Live link to view the project-MAIN  https://pcvv.netlify.app/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  ## Support and contact details 🙂
+
+To make a contribution to the code used or any suggestions you can click on the contact link and email us your suggestions.
+
+- Emails: victor.odambatafwa@student.moringaschool.com
+          collinskiarei13@gmail.com
+          victor.oroo@student.moringaschool.com
+          peggy.kimotho@student.moringaschool.com
+   
+ ## License
+
+Copyright (c) 2022 Group 6 Moringa School
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files , to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

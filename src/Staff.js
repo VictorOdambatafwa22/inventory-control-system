@@ -1,6 +1,6 @@
 import React from "react";
 
-function Staff({ formData, handleChange, handleSubmit, staffList, handleEdit, handleDelete, searchQuery, setSearchQuery, handleSearch }) {
+function Staff({ formData, handleChange, handleSubmit, staffList, handleEdit, handleDelete, searchQuery, setSearchQuery, handleStaffSearch }) {
   
   return (
   <div className="container">
@@ -46,7 +46,7 @@ function Staff({ formData, handleChange, handleSubmit, staffList, handleEdit, ha
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                   />
-                  <button onClick={handleSearch}>Search</button>
+                  <button onClick={handleStaffSearch}>Search</button>
                 </div>
 
           

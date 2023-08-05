@@ -13,8 +13,8 @@ const Login = ({ handleLogin }) => {
   };
 
   return (
-    <div>
-      <div className='container col-5 col-sm-3 position-absolute top-50 start-50 translate-middle'>
+    <div className='login-form'>
+      <div className='container col-5 mt-5 col-sm-3  translate-middle login-form'>
         <form onSubmit={handleSubmit}>
           <h1>KISCEN ENT.</h1>
           <h2>Login</h2>
