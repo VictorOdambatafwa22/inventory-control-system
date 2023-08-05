@@ -3,7 +3,8 @@ import React from "react";
 function Footer() {
 
     return (
-       <div className="position-absolute bottom-0 start-50 translate-middle-x text-center text-white" style={{ backgroundColor: "#3e04aa",width: "100%" }}>
+       //<div className="position-absolute bottom-0 start-50 translate-middle-x text-center text-white" style={{ backgroundColor: "#3e04aa",width: "100%" }}>
+        <div className="position-absolute bottom--100 start-50 translate-middle-x text-center text-white" style={{ backgroundColor: "#3e04aa",width: "100%" }}> 
 
         <footer>
             <div>

@@ -23,7 +23,11 @@ function ViewProductsTable({ products, onEdit,onDelete }) {
 
 
 
-            <table id="products" >
+           {/* <table id="products" >  */}
+           <table  className="table table-hover table-bordered mt-5 mx-auto" > 
+           
+          
+          
                 <thead>
                     <tr>
                         <th>productCode</th>

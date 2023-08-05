@@ -4,7 +4,7 @@ function Sales({ handleSearch ,products,onEdit,onDelete}) {
 
   return (
     <div>
-    <div className='container col-5 col-sm-3 position-absolute top-0 start-50 translate-middle mt-5'>
+    <div className='container col-5 col-sm-3 position-absolute top-50 start-50 translate-middle '>
       <form>
 
         <div className="mb-3 col-xs-2" >
